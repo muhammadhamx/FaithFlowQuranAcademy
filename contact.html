@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Faith Flow Quran Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="color:#fff; font-size:1.2rem; font-weight:bold;"><img
+                    src="./img/faith-flow-quran-academy-logo.png" alt="Faith Flow Quran Academy"></a></div>
+        <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li class="dropdown">
+                <a href="index.html#courses">Courses
+                    <!-- <i class="fas fa-caret-down"> -->
+
+                    </i></a>
+                <!-- <ul class="dropdown-content">
+                    <li><a href="index.html#basic-quran">Basic Quran Reading</a></li>
+                    <li><a href="index.html#tajweed">Quran with Tajweed</a></li>
+                    <li><a href="index.html#memorization">Quran Memorization</a></li>
+                    <li><a href="index.html#explanation">Translation & Explanation of Quran</a></li>
+                    <li><a href="index.html#quotes">Quotations of Muhammad ﷺ</a></li>
+                    <li><a href="index.html#sharia">Sharia Problems</a></li>
+                </ul> -->
+            </li>
+            <li><a href="pricing.html">Pricing & FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li class="close-menu" id="close-menu"><i class="fas fa-times"></i></li>
+        </ul>
+        <div class="nav-overlay" id="nav-overlay"></div>
+    </nav>
+    <section class="contact-section" data-aos="fade-up">
+        <div class="contact-container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you! Fill out the form below or reach us via the provided contact details.</p>
+            <div class="contact-flex">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+                <div class="contact-info">
+                    <h3>Faith Flow Quran Academy</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Quran Street, City, Country</p>
+                    <p><i class="fas fa-envelope"></i> info@quranacademy.com</p>
+                    <p><i class="fas fa-phone"></i> +92 370 700 0393</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/923707000393" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-messenger"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Floating WhatsApp and Facebook Buttons -->
+    <a href="https://wa.me/923707000393" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://facebook.com/" class="facebook-float" target="_blank" title="Message on Facebook">
+        <i class="fab fa-facebook-messenger"></i>
+    </a>
+    <footer class="footer" data-aos="fade-up">
+        <div class="footer-left">
+            <h3>Faith Flow Quran Academy</h3>
+            <a href="https://wa.me/923707000393" target="_blank">WhatsApp Us</a>
+            <a href="https://facebook.com/" target="_blank">Facebook</a>
+            <a href="index.html#about">About Us</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Services</a>
+        </div>
+        <div class="footer-right">
+            <h3>Subscribe for Updates</h3>
+            <input type="email" class="subscribe-input" placeholder="Enter your email">
+            <button class="subscribe-button">Subscribe</button>
+        </div>
+    </footer>
+    <div class="footer-bottom">&copy; 2025 Faith Flow Quran Academy. All rights reserved.</div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Navbar open/close logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const navOverlay = document.getElementById('nav-overlay');
+        function openMenu() {
+            navMenu.classList.add('active');
+            navOverlay.classList.add('active');
+        }
+        function closeNavMenu() {
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+        }
+        menuToggle.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeNavMenu);
+        navOverlay.addEventListener('click', closeNavMenu);
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', closeNavMenu);
+        });
+        document.querySelectorAll('.dropdown > a').forEach(drop => {
+            drop.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('open');
+                }
+            });
+        });
+        // Smooth scroll for same-page links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href').slice(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran Courses Pricing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-container {
+            margin-top: 2rem;
+        }
+
+        .pricing-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            width: 300px;
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+        }
+
+        .card h2 {
+            color: #13678A;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card .price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #E76F51;
+            margin-bottom: 1rem;
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #004d40;
+        }
+
+        .faq {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .faq-item {
+            background: #f7fafc;
+            margin: 10px 0;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #13678A;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 0.5rem;
+            color: #333;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        @media (max-width: 700px) {
+            .pricing-row {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html"><img src="./img/faith-flow-quran-academy-logo.png"
+                    alt="Faith Flow Quran Academy"></a></div>
+        <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#courses">Courses</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="pricing.html">Pricing & FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <header class="banner"
+        style="background-image: linear-gradient(rgba(0,77,64,0.7), rgba(0,77,64,0.7)), url('./img/quran images.jpg'); min-height: 40vh;">
+        <div class="banner-content">
+            <h1>Pricing & Frequently Asked Questions</h1>
+        </div>
+    </header>
+    <section class="pricing-container">
+        <div class="pricing-row">
+            <div class="card">
+                <h2>Basic Quran Course</h2>
+                <div class="price">$30/month</div>
+                <p>For beginners and children</p>
+                <p>2 sessions/week</p>
+                <p>One-on-one classes</p>
+            </div>
+            <div class="card">
+                <h2>Memorization Course</h2>
+                <div class="price">$50/month</div>
+                <p>For all ages</p>
+                <p>3 sessions/week</p>
+                <p>Certified teachers</p>
+            </div>
+            <div class="card">
+                <h2>Tajweed & Translation</h2>
+                <div class="price">$40/month</div>
+                <p>For intermediate/advanced</p>
+                <p>2 sessions/week</p>
+                <p>Detailed explanation</p>
+            </div>
+        </div>
+    </section>
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+            <div class="faq-item">
+                <div class="faq-question">What is the class duration?</div>
+                <div class="faq-answer">Each class lasts 30-40 minutes, depending on the course and student level.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Are the teachers qualified?</div>
+                <div class="faq-answer">Yes, all our teachers are certified and experienced in Quranic education.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can I choose my class timings?</div>
+                <div class="faq-answer">Yes, we offer flexible scheduling to suit your availability.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is there a free trial?</div>
+                <div class="faq-answer">Yes, we offer a free trial class for all new students.</div>
+            </div>
+        </div>
+    </section>
+    <!-- Floating WhatsApp and Facebook Buttons -->
+    <a href="https://wa.me/923707000393" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://facebook.com/" class="facebook-float" target="_blank" title="Message on Facebook">
+        <i class="fab fa-facebook-messenger"></i>
+    </a>
+    <footer class="footer" id="contact" data-aos="fade-up">
+        <div class="footer-left">
+            <h3>Faith Flow Quran Academy</h3>
+            <a href="https://wa.me/923707000393" target="_blank">WhatsApp Us</a>
+            <a href="https://facebook.com/" target="_blank">Facebook</a>
+            <a href="index.html#about">About Us</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Services</a>
+        </div>
+        <div class="footer-right">
+            <h3>Subscribe for Updates</h3>
+            <input type="email" class="subscribe-input" placeholder="Enter your email">
+            <button class="subscribe-button">Subscribe</button>
+        </div>
+    </footer>
+    <div class="footer-bottom">&copy; 2025 Faith Flow Quran Academy. All rights reserved.</div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Navbar open/close logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const closeMenu = document.getElementById('close-menu');
+        const navOverlay = document.getElementById('nav-overlay');
+        function openMenu() {
+            navMenu.classList.add('active');
+            navOverlay.classList.add('active');
+        }
+        function closeNavMenu() {
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+        }
+        menuToggle.addEventListener('click', openMenu);
+        if (closeMenu) closeMenu.addEventListener('click', closeNavMenu);
+        if (navOverlay) navOverlay.addEventListener('click', closeNavMenu);
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', closeNavMenu);
+        });
+        // Dropdown for mobile
+        document.querySelectorAll('.dropdown > a').forEach(drop => {
+            drop.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('open');
+                }
+            });
+        });
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', function () {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+        // Smooth scroll for same-page links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href').slice(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        // AOS animation
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+</body>
+
+</html>
