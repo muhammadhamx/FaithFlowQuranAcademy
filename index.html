@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="navbar">
         <div class="logo"><a href="#" style="color:#000000; font-size:1.2rem; font-weight:bold;"><img
                     src="./img/faith-flow-quran-academy-logo.png" alt="Faith Flow Quran Academy"></a>
@@ -44,31 +45,33 @@
         <div class="banner-content">
             <h1>Welcome to Faith Flow Quran Academy</h1>
             <p>Learn the Holy Quran with Tajweed, Translation & More</p>
-            <a href="#courses" class="banner-btn">Explore Courses</a>
+            <a href="#courses" class="banner-btn" aria-label="Explore our courses">Explore Courses</a>
         </div>
     </header>
-    <section class="cta-section" id="about" data-aos="fade-up">
-        <div class="cta-content">
+    <section class="cta-section" id="about">
+        <div class="cta-image" data-aos="fade-up">
+            <img src="./img/kids quran.jpg" alt="Start Learning Quran">
+        </div>
+        <div class="cta-content" data-aos="fade-up">
             <h2>Start Learning <span class="highlight">Qur’an</span> Today</h2>
             <p>Register yourself or your child with us today and take your first free trial class with expert teachers.
             </p>
-            <a href="#contact" class="cta-button">Get Started</a>
+            <a href="#contact" class="cta-button" aria-label="Get started with our courses">Get Started</a>
         </div>
-        <div class="cta-image">
-            <img src="./img/kids quran.jpg" alt="Start Learning Quran">
-        </div>
+        
     </section>
     <section class="step-forward" id="courses" data-aos="fade-up">
-        <div class="step-image">
-            <img src="./img/memorization of quran.jpg" alt="Quran Memorization">
-        </div>
+        
         <div class="step-content">
             <h2>Helping Your Child Grow, <span class="highlight"> One Lesson at a Time</span></h2>
             <p>Each child has a unique learning style. Our qualified tutors use a variety of effective methods and
                 modern tools to ensure your child stays engaged and enjoys the learning process.<br><br>At Faith Flow
                 Quran Academy, live classes offer not only Islamic education but also broader knowledge to support your
                 child’s overall development.</p>
-            <a href="#contact" class="step-btn">Book a Free Trial</a>
+            <a href="#contact" class="step-btn" aria-label="Book a free trial class">Book a Free Trial</a>
+        </div>
+        <div class="step-image">
+            <img src="./img/memorization of quran.jpg" alt="Quran Memorization">
         </div>
     </section>
     <section class="main9" data-aos="fade-up">
@@ -160,20 +163,27 @@
         const navMenu = document.getElementById('nav-menu');
         const closeMenu = document.getElementById('close-menu');
         const navOverlay = document.getElementById('nav-overlay');
+        
         function openMenu() {
             navMenu.classList.add('active');
             navOverlay.classList.add('active');
+            menuToggle.setAttribute('aria-expanded', 'true');
         }
+        
         function closeNavMenu() {
             navMenu.classList.remove('active');
             navOverlay.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
         }
+        
         menuToggle.addEventListener('click', openMenu);
-        closeMenu.addEventListener('click', closeNavMenu);
-        navOverlay.addEventListener('click', closeNavMenu);
+        if (closeMenu) closeMenu.addEventListener('click', closeNavMenu);
+        if (navOverlay) navOverlay.addEventListener('click', closeNavMenu);
+        
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', closeNavMenu);
         });
+        
         // Dropdown for mobile
         document.querySelectorAll('.dropdown > a').forEach(drop => {
             drop.addEventListener('click', function (e) {
@@ -183,6 +193,7 @@
                 }
             });
         });
+        
         // Smooth scroll for same-page links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -194,6 +205,7 @@
                 }
             });
         });
+        
         // AOS animation
         AOS.init({
             duration: 800,

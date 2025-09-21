@@ -73,6 +73,9 @@
             font-weight: 600;
             color: #13678A;
             cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            padding: 0.5rem 0;
         }
 
         .faq-answer {
@@ -99,6 +102,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <nav class="navbar">
         <div class="logo"><a href="index.html"><img src="./img/faith-flow-quran-academy-logo.png"
                     alt="Faith Flow Quran Academy"></a></div>
@@ -112,7 +116,7 @@
         </ul>
     </nav>
     <header class="banner"
-        style="background-image: linear-gradient(rgba(0,77,64,0.7), rgba(0,77,64,0.7)), url('./img/quran images.jpg'); min-height: 40vh;">
+        style="background-image: -webkit-linear-gradient(rgba(0,77,64,0.7), rgba(0,77,64,0.7)), url('./img/quran images.jpg'); background-image: linear-gradient(rgba(0,77,64,0.7), rgba(0,77,64,0.7)), url('./img/quran images.jpg'); min-height: 40vh; -webkit-background-size: cover; background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: scroll;">
         <div class="banner-content">
             <h1>Pricing & Frequently Asked Questions</h1>
         </div>
@@ -146,19 +150,19 @@
         <h2>Frequently Asked Questions</h2>
         <div class="faq">
             <div class="faq-item">
-                <div class="faq-question">What is the class duration?</div>
+                <div class="faq-question" tabindex="0" role="button" aria-expanded="false">What is the class duration?</div>
                 <div class="faq-answer">Each class lasts 30-40 minutes, depending on the course and student level.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Are the teachers qualified?</div>
+                <div class="faq-question" tabindex="0" role="button" aria-expanded="false">Are the teachers qualified?</div>
                 <div class="faq-answer">Yes, all our teachers are certified and experienced in Quranic education.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Can I choose my class timings?</div>
+                <div class="faq-question" tabindex="0" role="button" aria-expanded="false">Can I choose my class timings?</div>
                 <div class="faq-answer">Yes, we offer flexible scheduling to suit your availability.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Is there a free trial?</div>
+                <div class="faq-question" tabindex="0" role="button" aria-expanded="false">Is there a free trial?</div>
                 <div class="faq-answer">Yes, we offer a free trial class for all new students.</div>
             </div>
         </div>
@@ -221,6 +225,16 @@
         document.querySelectorAll('.faq-question').forEach(q => {
             q.addEventListener('click', function () {
                 this.parentElement.classList.toggle('active');
+                const isExpanded = this.parentElement.classList.contains('active');
+                this.setAttribute('aria-expanded', isExpanded);
+            });
+            
+            // Add keyboard support
+            q.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
             });
         });
         // Smooth scroll for same-page links
